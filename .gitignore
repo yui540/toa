@@ -1,0 +1,14 @@
+# release
+__release__
+
+# node_modules
+node_modules
+
+# .DS_Store
+.DS_Store
+
+# js
+*.js
+
+# html
+*.html
