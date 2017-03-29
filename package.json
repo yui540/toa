@@ -1,7 +1,7 @@
 {
   "name": "toa",
   "version": "0.0.1",
-  "description": "シンプルなミュージックアプリ「兎亜」",
+  "description": "シンプルなミュージックプレイヤー「兎亜」",
   "main": "src/bin/js/core.js",
   "scripts": {
     "start": "electron .",

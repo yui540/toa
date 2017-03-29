@@ -22,7 +22,7 @@ gulp.task 'coffee', ->
 
 # Riot
 gulp.task 'riot', ->
-	gulp.src 'src/scripts/components/riot/*.tag'
+	gulp.src 'src/scripts/components/tag/*.tag'
 		.pipe plumber()
 		.pipe riot
 			compact  : true
@@ -38,5 +38,5 @@ gulp.task 'watch', ->
 	gulp.watch [
 		'src/views/jade/*.jade'
 		'src/bin/coffee/*.coffee'
-		'src/scripts/components/riot/*.tag'
+		'src/scripts/components/tag/*.tag'
 	], ['jade', 'coffee', 'riot']
