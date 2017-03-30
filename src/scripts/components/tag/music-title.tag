@@ -1,7 +1,10 @@
 music-title
-	section.img
-	h1.title 茅野愛衣
-	div.art
+	section.img(
+		data-state="repeat"
+		onclick="{ onRepeat }"
+	)
+	h1.title { title }
+	div
 		section.line.line-1
 		section.line.line-2
 		section.line.line-3
@@ -18,10 +21,20 @@ music-title
 			display: block;
 			width: 30px;
 			height: 30px;
-			background-image: url(../../images/music.png);
-			background-size: 60%;
+			background-size: 80%;
 			background-position: center;
 			background-repeat: no-repeat;
+			cursor: pointer;
+			transition: all 0.3s ease 0s;
+		}
+		:scope .img:hover {
+			transform: scale(1.1);
+		}
+		:scope .img[data-state="repeat"] {
+			background-image: url(../../images/repeat.png);
+		}
+		:scope .img[data-state="repeat-one"] {
+			background-image: url(../../images/repeat_one.png);
 		}
 		:scope .title {
 			float: left;
@@ -46,12 +59,20 @@ music-title
 			position: absolute;
 			bottom: 0;
 			width: 6px;
-			height: 30px;
 			background-color: #6F8DCF;
 		}
-		:scope div .line-1 { left: 0; }
-		:scope div .line-2 { left: 12px; }
-		:scope div .line-3 { right: 0; }
+		:scope div .line-1 { 
+			height: 10px;
+			left: 0; 
+		}
+		:scope div .line-2 { 
+			height: 20px;
+			left: 12px; 
+		}
+		:scope div .line-3 { 
+			height: 30px;
+			right: 0; 
+		}
 		:scope .art .line-1 {
 			animation: line 1s ease 0s infinite;
 		}
@@ -68,4 +89,27 @@ music-title
 		}
 
 	script(type="coffee").
-		@title = opts.title
+		@title = 'no_music'
+
+		# repeat ---------------------------------------------------
+		@onRepeat = (e) ->
+			state = e.target.getAttribute 'data-state'
+
+			# repeat one
+			if state is 'repeat'
+				observer.trigger 'repeat-one'
+				e.target.setAttribute 'data-state', 'repeat-one'
+
+			# repeat
+			else
+				observer.trigger 'repeat'
+				e.target.setAttribute 'data-state', 'repeat'
+
+		# play -----------------------------------------------------
+		observer.on 'play', =>
+			@root.children[2].className = 'art'
+
+		# pause ----------------------------------------------------
+		observer.on 'pause', =>
+			@root.children[2].className = ''
+

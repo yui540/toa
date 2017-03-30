@@ -46,6 +46,9 @@ slider(
 	script(type="coffee").
 		down  = false
 
+		@on 'mount', ->
+
+
 		##
 		# 移動
 		# @param per : 割合
@@ -55,7 +58,10 @@ slider(
 			@root.children[1].style.left  = @width * per + 'px'
 
 			# イベント発火
-			observer.trigger 'seek', per
+			if opts.mode is 'seek'
+				observer.trigger 'seek', per
+			else
+				observer.trigger 'volume', per
 
 		# mount ----------------------------------------------
 		@on 'mount', ->

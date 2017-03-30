@@ -1,10 +1,10 @@
 control-box
-	div.open
+	div.open(onclick="{ openDir }")
 	div.control
 		section.back(onclick="{ musicBack }")
-		section.play(onclick="{ musicPlay }")
+		section.pause(onclick="{ musicPlay }")
 		section.forward(onclick="{ musicForward }")
-	div.list
+	div.list(onclick="{ openList }")
 
 	style(scoped).
 		:scope {
@@ -50,11 +50,11 @@ control-box
 			background-size: auto 90%;
 		}
 		:scope .pause { 
-			background-image: url(../../images/pause.png);
+			background-image: url(../../images/play.png);
 			background-size: auto 60%; 
 		}
 		:scope .play { 
-			background-image: url(../../images/play.png); 
+			background-image: url(../../images/pause.png); 
 			background-size: auto 60%;
 		}
 		:scope .forward { 
@@ -83,8 +83,33 @@ control-box
 
 	script(type="coffee").
 
-		@musicBack = ->
+		# back ----------------------------------------------
+		@musicBack = (e) ->
+			observer.trigger 'back-music'
 
-		@musicPlay = ->
+		# play ----------------------------------------------
+		@musicPlay = (e) ->
+			state = e.target.className
 
-		@musicForward = ->
+			# pause
+			if state is 'play'
+				observer.trigger 'pause'
+				e.target.className = 'pause'
+
+			# play
+			else
+				observer.trigger 'play'
+				e.target.className = 'play'
+
+		# forward -------------------------------------------
+		@musicForward = (e) ->
+			observer.trigger 'forward-music'
+
+		# open dir ------------------------------------------
+		@openDir = (e) ->
+			observer.trigger 'open-dir'
+
+		# open list -----------------------------------------
+		@openList = (e) ->
+			observer.trigger 'open-list'
+
