@@ -3,6 +3,7 @@ seek-bar
 	slider.area(
 		width="200"
 		mode="seek"
+		per="0"
 	)
 	div.area.duration { duration }
 

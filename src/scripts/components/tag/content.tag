@@ -1,5 +1,5 @@
 content
-	div.inner(data-state="list-box")
+	div.inner
 		section.main
 			music-title
 			seek-bar

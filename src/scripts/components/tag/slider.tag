@@ -46,9 +46,6 @@ slider(
 	script(type="coffee").
 		down  = false
 
-		@on 'mount', ->
-
-
 		##
 		# 移動
 		# @param per : 割合
@@ -65,12 +62,18 @@ slider(
 
 		# mount ----------------------------------------------
 		@on 'mount', ->
+
+			# seek
 			if opts.mode is 'seek'
 				@root.children[1].className += ' mode-seek'
 				@width = parseInt(opts.width) - 6
+
+			# volume
 			else
 				@root.children[1].className += ' mode-volume'
 				@width = parseInt(opts.width) - 15
+
+			@move parseInt opts.per
 
 		# mouse click ----------------------------------------
 		@mouseClick = (e) ->

@@ -1,6 +1,10 @@
 volume-box
 	div.volume-min
-	slider(width="200", mode="volume")
+	slider(
+		width="200"
+		mode="volume"
+		per="1"
+	)
 	div.volume-max
 
 	style(scoped).
