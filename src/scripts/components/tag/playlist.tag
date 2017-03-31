@@ -53,10 +53,25 @@ playlist
 
 		# mount ------------------------------------------
 		@on 'mount', ->
-			@music_list = [
-				{ 
-					check: true
-					title: '鳴海兎亜' 
-				}
-			]
+			list = localStorage['playlist']
+			if not list
+				list = []
+			else
+				list = JSON.parse list
+
+			@music_list = list
 			@update()
+
+		# mount ------------------------------------------
+		observer 'change-playlist', =>
+			list = localStorage['playlist']
+			if not list
+				list = []
+			else
+				list = JSON.parse list
+
+			@music_list = list
+			@update()
+
+
+
