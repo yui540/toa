@@ -98,6 +98,10 @@ control-box
 
 			# play
 			else
+				list = JSON.parse localStorage['playlist']
+				if not list.length
+					return 
+				
 				observer.trigger 'play'
 				e.target.className = 'play'
 

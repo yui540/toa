@@ -54,9 +54,11 @@ slider(
 			@root.children[0].style.width = per * 100 + '%'
 			@root.children[1].style.left  = @width * per + 'px'
 
-			# イベント発火
+			# seek
 			if opts.mode is 'seek'
 				observer.trigger 'seek', per
+
+			# volume
 			else
 				observer.trigger 'volume', per
 

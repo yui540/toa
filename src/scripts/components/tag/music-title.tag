@@ -89,7 +89,16 @@ music-title
 		}
 
 	script(type="coffee").
-		@title = 'no_music'
+		@on 'mount', ->
+			num  = parseInt localStorage['current']
+			list = JSON.parse localStorage['playlist']
+
+			if not list.length
+				@title = 'no_music'
+			else
+				@title = list[num].title
+
+			@update()
 
 		# repeat ---------------------------------------------------
 		@onRepeat = (e) ->

@@ -1,10 +1,9 @@
 playlist
-	div.music-li(
-		each="{ music_list }"
-		onclick="{ selectMusic }"
-		data-state="{ check }"
-	)
-		div.check
+	div.music-li(each="{ music_list }")
+		div.check(
+			data-num="{ num }"
+			onclick="{ selectMusic }"
+		)
 		div.title { title }
 
 	style(scoped).
@@ -30,7 +29,7 @@ playlist
 			background-color: #222;
 			border-radius: 3px;
 		}
-		:scope .music-li[data-state="true"] .check {
+		:scope .music-li .check[data-state="true"] {
 			background-image: url(../../images/check.png);
 			background-size: 90%;
 			background-position: center;
@@ -51,27 +50,20 @@ playlist
 
 	script(type="coffee").
 
-		# mount ------------------------------------------
-		@on 'mount', ->
-			list = localStorage['playlist']
-			if not list
-				list = []
-			else
-				list = JSON.parse list
+		@selectMusic = (e) ->
+			num = parseInt e.target.getAttribute 'data-num'
+
+		setPlayList = =>
+			list = JSON.parse localStorage['playlist']
 
 			@music_list = list
 			@update()
 
 		# mount ------------------------------------------
-		observer 'change-playlist', =>
-			list = localStorage['playlist']
-			if not list
-				list = []
-			else
-				list = JSON.parse list
+		@on 'mount', setPlayList
 
-			@music_list = list
-			@update()
+		# mount ------------------------------------------
+		observer.on 'change-playlist', setPlayList
 
 
 

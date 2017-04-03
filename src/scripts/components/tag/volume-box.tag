@@ -3,7 +3,7 @@ volume-box
 	slider(
 		width="200"
 		mode="volume"
-		per="1"
+		per="{ volume }"
 	)
 	div.volume-max
 
@@ -14,6 +14,11 @@ volume-box
 			height: 30px;
 			margin: 0 auto;
 		}
+		:scope slider {
+			float: left;
+			margin-top: 13.5px;
+			margin-left: 10px;
+		}
 		:scope .volume-min {
 			float: left;
 			width: 30px;
@@ -22,11 +27,6 @@ volume-box
 			background-size: 60%;
 			background-position: center;
 			background-repeat: no-repeat;
-		}
-		:scope slider {
-			float: left;
-			margin-top: 13.5px;
-			margin-left: 10px;
 		}
 		:scope .volume-max {
 			float: left;
@@ -40,3 +40,11 @@ volume-box
 		}
 
 	script(type="coffee").
+
+		# mount ----------------------------------------
+		@on 'mount', ->
+			@volume = parseFloat localStorage['volume']
+
+			# 更新
+			@update()	
+

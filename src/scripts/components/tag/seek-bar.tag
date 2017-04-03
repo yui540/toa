@@ -3,7 +3,7 @@ seek-bar
 	slider.area(
 		width="200"
 		mode="seek"
-		per="0"
+		per="{ per }"
 	)
 	div.area.duration { duration }
 
@@ -36,7 +36,39 @@ seek-bar
 		}
 
 	script(type="coffee").
-		@current  = '0:00'
-		@duration = '0:00'
 
+		# mount ------------------------------------------------
+		@on 'mount', ->
+			list     = JSON.parse localStorage['playlist']
+			time     = parseFloat localStorage['time']
+			duration = parseFloat localStorage['duration']
 
+			if not list.length
+				@current  = '0:00'
+				@duration = '0:00'
+				@per      = 0
+			else
+				@current  = castTime time
+				@duration = castTime duration
+				@per      = @current / @duration
+
+			# 更新
+			@update()
+
+		##
+		# 時間を文字列に変換
+		# @param  time : 時間
+		# @return 時間文字列
+		##
+		castTime = (time) ->
+			if time >= 60
+				minu = time / 60
+				sec  = time % 60
+			else
+				minu = 0
+				sec  = time
+
+			if minu < 10
+				minu = '0' + minu
+
+			return minu + ':' + sec
