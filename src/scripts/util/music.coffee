@@ -87,6 +87,24 @@ class Music
 		localStorage['repeat'] = 'repeat-one'
 
 	##
+	# 曲の選択
+	# @param num : 曲番号
+	##
+	select: (num) ->
+		list  = JSON.parse localStorage['playlist']
+
+		localStorage['current'] = num
+		_path = list[num].path
+
+		@set _path, =>
+			@move 0
+			@play()
+			observer.trigger 'seek', 0
+
+			# イベント発火
+			observer.trigger 'change-music'
+
+	##
 	# 最初の曲
 	##
 	first: ->

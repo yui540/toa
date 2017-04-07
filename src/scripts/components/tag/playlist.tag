@@ -50,20 +50,31 @@ playlist
 
 	script(type="coffee").
 
+		# mount ------------------------------------------
+		@on 'mount', ->
+			@setPlayList()
+
+		# change music -----------------------------------
+		observer.on 'change-music', =>
+			@setPlayList()
+
+		# select music -----------------------------------
 		@selectMusic = (e) ->
 			num = parseInt e.target.getAttribute 'data-num'
 
-		setPlayList = =>
-			list = JSON.parse localStorage['playlist']
+			music.select num
 
+		##
+		# プレイリストを設置
+		##
+		@setPlayList = ->
+			num  = parseInt localStorage['current']
+			list = JSON.parse localStorage['playlist']
 			@music_list = list
+
+			# 更新
 			@update()
 
-		# mount ------------------------------------------
-		@on 'mount', setPlayList
-
-		# mount ------------------------------------------
-		observer.on 'change-playlist', setPlayList
-
-
-
+			# 選択中の曲
+			child = @root.children[num].children[0]
+			child.setAttribute 'data-state', 'true'
