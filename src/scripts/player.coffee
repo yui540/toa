@@ -76,17 +76,18 @@ set = ->
 
 	if list.length
 		_path = list[num].path
+
 		music.set _path, ->
 			music.move per
 			observer.trigger 'seek', per
 
 			# 再生
 			if localStorage['play'] is 'true'
-				music.play()
+				observer.trigger 'play'
 
 			# 停止
 			else
-				music.pause()
+				observer.trigger 'pause'
 
 ##
 # ディレクトリの読み取り
@@ -103,7 +104,6 @@ readdir = (d_path) ->
 # @param d_path : ディレクトリパス
 ##
 openPlayList = (d_path) ->
-
 	# mp3の抽出
 	_dir = readdir d_path
 	_dir = _dir.filter (ele, index, array) ->
