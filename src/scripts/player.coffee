@@ -132,6 +132,11 @@ openPlayList = (d_path) ->
 			path  : val
 			title : title
 
+	# チェック
+	if dir.length <= 0
+		alert('MP3ファイルがありません。')
+		return
+
 	# localStorage書き込み
 	dir = JSON.stringify dir
 	delete localStorage['current']
