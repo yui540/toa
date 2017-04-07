@@ -87,7 +87,7 @@ control-box
 		@musicBack = (e) ->
 			observer.trigger 'back-music'
 
-		# play ----------------------------------------------
+		# click play ----------------------------------------
 		@musicPlay = (e) ->
 			state = e.target.className
 
@@ -104,6 +104,16 @@ control-box
 				
 				observer.trigger 'play'
 				e.target.className = 'play'
+
+		# play ----------------------------------------------
+		observer.on 'play', =>
+			btn = @root.children[1].children[1]
+			btn.className = 'play'
+
+		# pause ---------------------------------------------
+		observer.on 'pause', =>
+			btn = @root.children[1].children[1]
+			btn.className = 'pause'
 
 		# forward -------------------------------------------
 		@musicForward = (e) ->
