@@ -81,18 +81,15 @@ init = ->
 # 起動時の処理
 ##
 set = ->
-	time     = parseFloat localStorage['time']
-	duration = parseFloat localStorage['duration']
 	num      = parseInt   localStorage['current']
 	list     = JSON.parse localStorage['playlist']
-	per      = time / duration
 
 	if list.length
 		_path = list[num].path
 
 		music.set _path, ->
-			music.move per
-			observer.trigger 'seek', per
+			music.move 0
+			observer.trigger 'seek', 0
 
 			# 再生
 			if localStorage['play'] is 'true'
@@ -137,9 +134,13 @@ openPlayList = (d_path) ->
 
 	# localStorage書き込み
 	dir = JSON.stringify dir
-	localStorage['current']  = 0
+	delete localStorage['current']
+	init()
 	localStorage['playlist'] = dir
 
+	# 準備完了
+	set()
+
 	# イベント発火
-	observer.trigger 'change-playlist'
+	observer.trigger 'change-music'
 	

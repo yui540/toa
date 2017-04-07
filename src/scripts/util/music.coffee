@@ -91,12 +91,13 @@ class Music
 	##
 	first: ->
 		list  = JSON.parse localStorage['playlist']
-		
+
 		localStorage['current'] = 0
 		_path = list[0].path
 
 		@set _path, =>
 			@move 0
+			@play()
 			observer.trigger 'seek', 0
 
 			# イベント発火
@@ -119,6 +120,7 @@ class Music
 
 		@set _path, =>
 			@move 0
+			@play()
 			observer.trigger 'seek', 0
 
 			# イベント発火
@@ -143,6 +145,7 @@ class Music
 
 		@set _path, =>
 			@move 0
+			@play()
 			observer.trigger 'seek', 0
 
 			# イベント発火
