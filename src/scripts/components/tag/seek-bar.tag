@@ -37,8 +37,10 @@ seek-bar
 
 	script(type="coffee").
 
-		# mount ------------------------------------------------
-		@on 'mount', ->
+		##
+		# 時間の設置
+		##
+		@setTime = ->
 			list     = JSON.parse localStorage['playlist']
 			time     = parseFloat localStorage['time']
 			duration = parseFloat localStorage['duration']
@@ -50,7 +52,7 @@ seek-bar
 			else
 				@current  = castTime time
 				@duration = castTime duration
-				@per      = @current / @duration
+				@per      = time / duration
 
 			# 更新
 			@update()
@@ -62,13 +64,22 @@ seek-bar
 		##
 		castTime = (time) ->
 			if time >= 60
-				minu = time / 60
-				sec  = time % 60
+				minu = parseInt(time / 60)
+				sec  = parseInt(time % 60)
 			else
 				minu = 0
-				sec  = time
+				sec  = parseInt time
 
-			if minu < 10
-				minu = '0' + minu
+			if sec < 10
+				sec = '0' + sec
 
 			return minu + ':' + sec
+
+		# mount ------------------------------------------------
+		@on 'mount', ->
+			@setTime()
+
+		# seek ---------------------------------------------
+		observer.on 'seek', =>
+			@setTime()
+

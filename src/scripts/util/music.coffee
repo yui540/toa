@@ -16,7 +16,6 @@ class Music
 		@path = m_path
 
 		# loadedmetadata ---------------------------------
-		@audio.src = m_path
 		@audio.addEventListener 'loadedmetadata', (e) =>
 			@duration = @audio.duration
 
@@ -26,6 +25,8 @@ class Music
 			# コールバック発火
 			fn()
 		, false
+
+		@audio.src = m_path
 
 	##
 	# 音楽の再生
@@ -40,11 +41,8 @@ class Music
 			localStorage['time'] = @current
 
 			# イベント発火
-			observer.trigger 'seek', 
-				per      : @current / @duration
-				current  : @current
-				duration : @duration
-		, 1000 / 60
+			observer.trigger 'seek', @current / @duration
+		, 1000
 
 	##
 	# 音楽の停止
@@ -61,7 +59,8 @@ class Music
 		time     = @duration * per
 		@current = time
 
-		@audio.currentTime = @current
+		localStorage['time'] = @current
+		@audio.currentTime   = @current
 
 	##
 	# 音量の調整

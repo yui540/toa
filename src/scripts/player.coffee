@@ -35,7 +35,8 @@ observer.on 'pause', ->
 	music.pause()
 
 # seek -------------------------------------------------
-observer.on 'seek', (data) ->
+observer.on 'seek', (per) ->
+	
 
 # volume -----------------------------------------------
 observer.on 'volume', (volume) ->

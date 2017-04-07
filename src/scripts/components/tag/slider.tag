@@ -47,16 +47,23 @@ slider(
 		down  = false
 
 		##
+		# シーク移動
+		# @param per : 割合
+		##
+		@seek = (per) ->
+			@root.children[0].style.width = per * 100 + '%'
+			@root.children[1].style.left  = @width * per + 'px'
+
+		##
 		# 移動
 		# @param per : 割合
 		##
 		@move = (per) ->
-			@root.children[0].style.width = per * 100 + '%'
-			@root.children[1].style.left  = @width * per + 'px'
+			@seek per
 
 			# seek
 			if opts.mode is 'seek'
-				observer.trigger 'seek', per
+				music.move per
 
 			# volume
 			else
@@ -75,7 +82,12 @@ slider(
 				@root.children[1].className += ' mode-volume'
 				@width = parseInt(opts.width) - 15
 
-			@move parseInt opts.per
+			@move parseFloat opts.per
+
+		# seek -----------------------------------------------
+		observer.on 'seek', (per) =>
+			if opts.mode is 'seek'
+				@seek per
 
 		# mouse click ----------------------------------------
 		@mouseClick = (e) ->
