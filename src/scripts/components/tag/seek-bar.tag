@@ -79,7 +79,11 @@ seek-bar
 		@on 'mount', ->
 			@setTime()
 
-		# seek ---------------------------------------------
+		# change musci -----------------------------------------
+		observer.on 'change-music', =>
+			@setTime()
+
+		# seek -------------------------------------------------
 		observer.on 'seek', =>
 			@setTime()
 

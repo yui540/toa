@@ -34,14 +34,26 @@ observer.on 'pause', ->
 	localStorage['play'] = false
 	music.pause()
 
-# seek -------------------------------------------------
-observer.on 'seek', (per) ->
-	
+# repeat all -------------------------------------------
+observer.on 'repeat', (per) ->
+	music.repeatAll()
+
+# repeat one -------------------------------------------
+observer.on 'repeat-one', (per) ->
+	music.repeatOne()
 
 # volume -----------------------------------------------
 observer.on 'volume', (volume) ->
 	localStorage['volume'] = volume
 	music.volume volume
+
+# forward music ----------------------------------------
+observer.on 'forward-music', ->
+	music.next()
+
+# back music -------------------------------------------
+observer.on 'back-music', ->
+	music.back()
 
 # open dir ---------------------------------------------
 observer.on 'open-dir', ->

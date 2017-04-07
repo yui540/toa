@@ -89,16 +89,46 @@ music-title
 		}
 
 	script(type="coffee").
-		@on 'mount', ->
-			num  = parseInt localStorage['current']
-			list = JSON.parse localStorage['playlist']
+
+		##
+		# 音楽の変更
+		##
+		@changeMusic = ->
+			num   = parseInt localStorage['current']
+			state = localStorage['repeat']
+			list  = JSON.parse localStorage['playlist']
 
 			if not list.length
 				@title = 'no_music'
 			else
 				@title = list[num].title
 
+			if state is 'repeat'
+				@repeatAll()
+			else
+				@repeatOne()
+
 			@update()
+
+		##
+		# 全曲リピート
+		##
+		@repeatAll = ->
+			@root.children[0].setAttribute 'data-state', 'repeat'
+
+		##
+		# 1曲リピート
+		##
+		@repeatOne = ->
+			@root.children[0].setAttribute 'data-state', 'repeat-one'
+
+		# mount ----------------------------------------------------
+		@on 'mount', ->
+			@changeMusic()
+
+		# change music ---------------------------------------------
+		observer.on 'change-music', =>
+			@changeMusic()
 
 		# repeat ---------------------------------------------------
 		@onRepeat = (e) ->
@@ -107,12 +137,12 @@ music-title
 			# repeat one
 			if state is 'repeat'
 				observer.trigger 'repeat-one'
-				e.target.setAttribute 'data-state', 'repeat-one'
+				@repeatOne()
 
 			# repeat
 			else
 				observer.trigger 'repeat'
-				e.target.setAttribute 'data-state', 'repeat'
+				@repeatAll()
 
 		# play -----------------------------------------------------
 		observer.on 'play', =>
