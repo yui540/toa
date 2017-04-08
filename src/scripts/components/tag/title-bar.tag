@@ -35,5 +35,5 @@ title-bar
 		}
 
 	script(type="coffee").
-		onClick = ->
+		@onClick = ->
 			ipc.send 'close'

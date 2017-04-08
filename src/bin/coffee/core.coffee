@@ -26,4 +26,9 @@ app.on 'ready', ->
 # window all closed -----------------------------------------
 app.on 'window-all-closed', ->
 	app.quit()
+
+# close ------------------------------------------------------
+ipc.on 'close', ->
+	console.log 1
+	player.close()
 	
