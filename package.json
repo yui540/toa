@@ -6,7 +6,10 @@
   "scripts": {
     "start": "electron .",
     "build": "gulp",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "package:mac": "electron-packager . 兎亜 --out=__release__ --platform=darwin --arch=x64 --icon=icons/icon.icns --overwrite",
+    "package:win": "electron-packager . 兎亜 --out=__release__ --platform=win32 --arch=x64 --icon=icons/icon.ico --overwrite",
+    "package:linux": "electron-packager . 兎亜 --out=__release__ --platform=linux --arch=x64 --icon=icons/icon.icns --overwrite"
   },
   "repository": {
     "type": "git",
@@ -14,7 +17,8 @@
   },
   "keywords": [
     "music",
-    "toa"
+    "toa",
+    "兎亜"
   ],
   "author": "yuki540",
   "license": "MIT",
@@ -33,6 +37,7 @@
     "gulp-uglify": "^2.1.2"
   },
   "dependencies": {
+    "coffee-script": "^1.12.4",
     "riot": "^3.4.0"
   }
 }
