@@ -13,16 +13,22 @@
 
 ## Demo
 動作を確認したい場合は、
+
 [https://twitter.com/eriri_jp/status/850557992990687232](https://twitter.com/eriri_jp/status/850557992990687232)
+
 をみてください。
 
 「兎亜」に関することは、
+
 [http://qiita.com/yuki540/items/8a2b8b07bea896fb7151](http://qiita.com/yuki540/items/8a2b8b07bea896fb7151)
+
 をみてください。
 
 ## Download
 「兎亜」を使いたい場合は、
+
 [https://github.com/yuki540net/toa/releases/tag/v0.0.1](https://github.com/yuki540net/toa/releases/tag/v0.0.1)
+
 で自身のOSにあったものをダウンロードしてください。
 
 Mac/Windows/Linuxに対応しています。
