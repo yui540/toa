@@ -3,35 +3,26 @@
 
 ![toa](./__sample__/toa.png)
 
-選択したディレクトリ内のmp3ファイルを再生するという、シンプルな設計のソフトウェアです。
+- 兎亜についての紹介ページ
+  - [Qiita - Electronでシンプルな音楽プレイヤーを作ってみた](http://qiita.com/yuki540/items/8a2b8b07bea896fb7151)
+- 兎亜のダウンロード
+  - [GitHub - Releases](https://github.com/yuki540net/toa/releases/tag/v0.0.1)
+- デモ動画
+  - [Twitter - 兎亜のデモ動画](https://twitter.com/eriri_jp/status/850557992990687232)
+- 開発者
+   - yuki540
+   - [Twitter - @eriri_jp](https://twitter.com/eriri_jp)
+   - [HP - yuki540.com](http://yuki540.com)
+   
+## ミュージックプレイヤーとしての最良の選択。
 
-コンパクトなウィンドウサイズなので、デスクトップでの作業スペースを奪うことなく配置できます。
+### 選択したディレクトリ内のmp3ファイルを再生するという、シンプルな設計のソフトウェアです。
 
-また、フラットで美しいデザインに仕上げました。
+### コンパクトなウィンドウサイズなので、デスクトップでの作業スペースを奪うことなく配置できます。
+
+### また、フラットで美しいデザインに仕上げました。
 
 ![desktop](./__sample__/desktop.png)
-
-## Demo
-動作を確認したい場合は、
-
-[https://twitter.com/eriri_jp/status/850557992990687232](https://twitter.com/eriri_jp/status/850557992990687232)
-
-をみてください。
-
-「兎亜」に関することは、
-
-[http://qiita.com/yuki540/items/8a2b8b07bea896fb7151](http://qiita.com/yuki540/items/8a2b8b07bea896fb7151)
-
-をみてください。
-
-## Download
-「兎亜」を使いたい場合は、
-
-[https://github.com/yuki540net/toa/releases/tag/v0.0.1](https://github.com/yuki540net/toa/releases/tag/v0.0.1)
-
-で自身のOSにあったものをダウンロードしてください。
-
-Mac/Windows/Linuxに対応しています。
 
 ## Usage
 まず、「兎亜」を起動してください。
