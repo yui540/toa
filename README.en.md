@@ -18,7 +18,7 @@
 
 A simple design of just playing the mp3 files under selected directory.
 
-Toa won't bother the desktop with its window size.
+Toa has just enough UI to enjoy music, so Toa won't occupy your screen.
 
 It also has the beautiful exterior of the flat design like below:
 
@@ -30,7 +30,7 @@ Getting started : You have to launch the "toa".
 
 ![ready](./__sample__/ready.png)
 
-### Selecting the Directory where the music is placed.
+### Selecting the Directory where the music files are placed.
 
 When you click search button:
 
