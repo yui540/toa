@@ -16,27 +16,27 @@
    
 ## An Ideal Music Player
 
-A simple design of just playing the mp3 files under selected directory.
+Toa has a simple design, built to streamline it's purpose: playing MP3s from a directory.
 
-Toa has just enough UI to enjoy music, so Toa won't occupy your screen.
+Toa has just enough UI to enjoy music, so it won't take up unnecessary screen space.
 
-It also has the beautiful exterior of the flat design like below:
+It utilizes flat design, like so:
 
 ![desktop](./__sample__/desktop.png)
 
 ## Usages
 
-Getting started : You have to launch the "toa".
+Getting started : Launch "toa".
 
 ![ready](./__sample__/ready.png)
 
-### Selecting the Directory where the music files are placed.
+### Select the Directory where the music files are placed
 
 When you click search button:
 
 ![open](./__sample__/open_1.png)
 
-You will see the directory selectig dialog.
+You will see the directory selection dialog.  
 Then select a directory containing mp3 files.
 
 ![open](./__sample__/open_2.png)
@@ -44,31 +44,31 @@ Then select a directory containing mp3 files.
 After selecting the directry, you can manage the music in the directry.
 
 ### Jumping to specific time
-from current playback position, you can click any position of the seekbar to jump to specific time of the music:
+Click any position in the seekbar to jump to a specific time:
 
 ![seek](./__sample__/seek.png)
 
 ### Repeating
-Click the icon next to music name to toggle to playlist or single music repeat.
+Click the icon next to the music title to toggle playlist or single file repetition.
 
 ![repeat](./__sample__/repeat.png)
 
 ### Skipping
-Press button on the left hand of play button to play the previous music.
+Press button on the left hand of play button to play the previous track.
 
 ![back](./__sample__/back.png)
 
-In order to play the next music, Press the button on the right hand of play button.
+In order to play the next track, Press the button on the right hand of play button.
 
 ![forward](./__sample__/forward.png)
 
 ### Selecting a music
 
-when you want to skip to other music, you have to press the icon that has three of horizontal lines (so-called the Hamburger button).
+when you want to select a different track, press the icon that has three horizontal lines (so-called the Hamburger menu button).
 
 ![playlist](./__sample__/playlist_1.png)
 
-Then The list of music in the directory will show and you can fill the checkboxes you of the music or song you like to play.
+This will show a list of music in the directory and you can select the checkboxes for the tracks you want to play.
 
 ![playlist](./__sample__/playlist_2.png)
 
