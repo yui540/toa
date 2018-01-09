@@ -67,5 +67,5 @@
 
 ![playlist](./__sample__/playlist_2.png)
 
-## Lisence
+## License
 このソフトウェアは、MIT Licenseのもとで公開されています。
