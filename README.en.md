@@ -20,7 +20,7 @@ Toa has a simple design, built to streamline it's purpose: playing MP3s from a d
 
 Toa has just enough UI to enjoy music, so it won't take up unnecessary screen space.
 
-It utilizes flat design, like so:
+It utilizes flat design, shown below:
 
 ![desktop](./__sample__/desktop.png)
 
