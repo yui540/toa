@@ -18,21 +18,21 @@
 
 A simple design of just playing the mp3 files under selected directory.
 
-This won't bother the desktop with a compact window size.
+Toa won't bother the desktop with its window size.
 
-And the flat and beautiful exterior:
+It also has the beautiful exterior of the flat design like below:
 
 ![desktop](./__sample__/desktop.png)
 
 ## Usages
 
-First launch the "toa".
+Getting started : You have to launch the "toa".
 
 ![ready](./__sample__/ready.png)
 
-### Selecting the Directory
+### Selecting the Directory where the music is placed.
 
-Click the icon of magnifying glass:
+When you click search button:
 
 ![open](./__sample__/open_1.png)
 
@@ -41,10 +41,10 @@ Then select a directory containing mp3 files.
 
 ![open](./__sample__/open_2.png)
 
-At last you can play musics in the directory.
+After selecting the directry, you can manage the music in the directry.
 
-### Seeking
-Use seekbar to change playback position:
+### Jumping to specific time
+from current playback position, you can click any position of the seekbar to jump to specific time of the music:
 
 ![seek](./__sample__/seek.png)
 
@@ -54,22 +54,21 @@ Click the icon next to music name to toggle to playlist or single music repeat.
 ![repeat](./__sample__/repeat.png)
 
 ### Skipping
-Press left button of play button to play the previous music.
+Press button on the left hand of play button to play the previous music.
 
 ![back](./__sample__/back.png)
 
-Press right button of play button to play the next music.
+In order to play the next music, Press the button on the right hand of play button.
 
 ![forward](./__sample__/forward.png)
 
 ### Selecting a music
 
-Press the icon with three lines:
+when you want to skip to other music, you have to press the icon that has three of horizontal lines (so-called the Hamburger button).
 
 ![playlist](./__sample__/playlist_1.png)
 
-Then you can see list of musics.
-To play, check the checkbox of the music you want to listen.
+Then The list of music in the directory will show and you can fill the checkboxes you of the music or song you like to play.
 
 ![playlist](./__sample__/playlist_2.png)
 
