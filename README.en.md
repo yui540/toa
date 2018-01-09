@@ -73,5 +73,5 @@ To play, check the checkbox of the music you want to listen.
 
 ![playlist](./__sample__/playlist_2.png)
 
-## Lisence
+## License
 This software is licensed under MIT license.
