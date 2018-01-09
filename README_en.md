@@ -1,15 +1,15 @@
 # 兎亜 - toa
-「兎亜」は、Electron製のシンプルなミュージックプレイヤーです。
+"toa" is simple music player made by Electron.
 
 ![toa](./__sample__/toa.png)
 
-- 兎亜についての紹介ページ
+- introduction (japanese)
   - [Qiita - Electronでシンプルな音楽プレイヤーを作ってみた](http://qiita.com/yuki540/items/8a2b8b07bea896fb7151)
-- 兎亜のダウンロード
+- download
   - [GitHub - Releases](https://github.com/yuki540net/toa/releases/tag/v0.0.1)
-- デモ動画
+- demo movie (japanese)
   - [Twitter - 兎亜のデモ動画](https://twitter.com/eriri_jp/status/850557992990687232)
-- 開発者
+- developed by
    - yuki540
    - [Twitter - @eriri_jp](https://twitter.com/eriri_jp)
    - [HP - yuki540.com](http://yuki540.com)
