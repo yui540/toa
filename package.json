@@ -7,9 +7,9 @@
     "start": "electron .",
     "build": "gulp",
     "watch": "gulp watch",
-    "package:mac": "electron-packager . 兎亜 --out=__release__ --platform=darwin --arch=x64 --icon=icons/icon.icns --overwrite",
-    "package:win": "electron-packager . 兎亜 --out=__release__ --platform=win32 --arch=x64 --icon=icons/icon.ico --overwrite",
-    "package:linux": "electron-packager . 兎亜 --out=__release__ --platform=linux --arch=x64 --icon=icons/icon.icns --overwrite"
+    "package:mac": "npx electron-packager . toa --out=__release__ --platform=darwin --arch=x64 --icon=icons/icon.icns --overwrite",
+    "package:win": "npx electron-packager . toa --out=__release__ --platform=win32 --arch=x64 --icon=icons/icon.ico --overwrite",
+    "package:linux": "npx electron-packager . toa --out=__release__ --platform=linux --arch=x64 --icon=icons/icon.icns --overwrite"
   },
   "repository": {
     "type": "git",
