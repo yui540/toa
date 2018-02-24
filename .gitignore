@@ -12,3 +12,5 @@ node_modules
 
 # html
 *.html
+
+src/scripts/components/js/

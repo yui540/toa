@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/yuki540net/toa#readme",
   "devDependencies": {
+    "coffee-script": "^1.12.7",
     "electron": "^1.6.2",
     "electron-packager": "^8.6.0",
     "gulp": "^3.9.1",
@@ -34,10 +35,8 @@
     "gulp-jade": "^1.1.0",
     "gulp-plumber": "^1.1.0",
     "gulp-riot": "^1.1.0",
-    "gulp-uglify": "^2.1.2"
+    "gulp-uglify": "^2.1.2",
+    "riot": "^3.9.0"
   },
-  "dependencies": {
-    "coffee-script": "^1.12.4",
-    "riot": "^3.4.0"
-  }
+  "dependencies": {}
 }

@@ -17,7 +17,7 @@ app.on 'ready', ->
 	player = new Browser window_config
 	player.loadURL window_path
 
-	#player.webContents.toggleDevTools()
+  #player.webContents.toggleDevTools()
 
 	# closed --------------------------------------------------
 	player.on 'closed', ->
