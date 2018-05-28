@@ -6,13 +6,13 @@
 - 兎亜についての紹介ページ
   - [Qiita - Electronでシンプルな音楽プレイヤーを作ってみた](http://qiita.com/yuki540/items/8a2b8b07bea896fb7151)
 - 兎亜のダウンロード
-  - [GitHub - Releases](https://github.com/yuki540net/toa/releases/tag/v0.0.1)
+  - [GitHub - Releases](https://github.com/yui540/toa/releases/tag/v0.0.1)
 - デモ動画
-  - [Twitter - 兎亜のデモ動画](https://twitter.com/eriri_jp/status/850557992990687232)
+  - [Twitter - 兎亜のデモ動画](https://twitter.com/yui540/status/850557992990687232)
 - 開発者
-   - yuki540
-   - [Twitter - @eriri_jp](https://twitter.com/eriri_jp)
-   - [HP - yuki540.com](http://yuki540.com)
+   - yui540
+   - [Twitter - @yui540](https://twitter.com/yui540)
+   - [HP - magical-girl.site](https://magical-girl.site/)
    
 ## ミュージックプレイヤーとしての最良の選択。
 
