@@ -16,6 +16,7 @@ title-bar
 			width: 12px;
 			height: 12px;
 			border-radius: 50%;
+			cursor: pointer;
 			-webkit-app-region: no-drag;
 		}
 		:scope .close:before,
