@@ -12,6 +12,16 @@ window_config = require '../../config/window.json'
 # window
 player = null
 
+# make single instance --------------------------------------
+shouldQuit = app.makeSingleInstance ->
+  if player
+    if player.isMinimized()
+      player.restore()
+    player.focus()
+
+if shouldQuit
+  app.quit()
+
 # ready -----------------------------------------------------
 app.on 'ready', ->
 	player = new Browser window_config
@@ -31,4 +41,3 @@ app.on 'window-all-closed', ->
 ipc.on 'close', ->
 	console.log 1
 	player.close()
-	
