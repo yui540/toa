@@ -3,5 +3,6 @@
 	"height"      : 150,
 	"transparent" : true,
 	"frame"       : false,
-	"resizable"   : false
+	"resizable"   : false,
+	"maximizable" : false
 }
